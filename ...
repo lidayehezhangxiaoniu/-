@@ -1,0 +1,35 @@
+Temperatures=['C','F','K']
+def TempConver(Temp):
+	num=input("输入您的数字:")
+	num=float(num)
+	#用了三个if可以随便转换
+	if Temp==Temperatures[0]:
+		num1=str(9*num/5+32)
+		num2=str(num+273.15)
+		print(Temperatures[1]+"="+num1)
+		print(Temperatures[2]+"="+num2)
+	if Temp==Temperatures[1]:
+		num1=str(5*num/9-160/9)
+		num2=str(5*num/9-160/9+273.15)
+		print(Temperatures[0]+"="+num1)
+		print(Temperatures[2]+"="+num2)
+	if Temp==Temperatures[2]:
+		num1=str(num-273.15)
+		num2=str(9*(num-273.15)/5+32)
+		print(Temperatures[0]+"="+num1)
+		print(Temperatures[1]+"="+num2)	
+	
+while True:
+	#定义一个可以结束的东东
+	something="请选择温度格式like C K F,\你可以输入m结束."
+	#输入类型
+	something+="\nC is degree centigrade,K is kelvin,F is fahrenheit \n:"    
+	Temp=input(something)
+	if Temp in Temperatures:												
+		TempConver(Temp)
+		continue
+	if Temp=='m':
+		break
+	else :
+		print("输入错误")
+#py的类还学得不是很好，先用面向过程，过几天再封装。组长大人见谅，嘿嘿《《
